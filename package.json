@@ -1,0 +1,22 @@
+{
+  "name": "then-write-json",
+  "version": "0.1.0",
+  "description": "Write contents to JSON file using JSON.stringify and promises. Creating intermediate directories if they don't exist.",
+  "repository": "tunnckoCore/then-write-json",
+  "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "standard && node test.js"
+  },
+  "dependencies": {
+    "graceful-fs": "^3.0.7",
+    "mz": "^2.0.0",
+    "then-stringify-json": "^1.0.1"
+  },
+  "devDependencies": {
+    "assertit": "^0.1.0",
+    "bluebird": "^2.9.27"
+  },
+  "keywords": []
+}
