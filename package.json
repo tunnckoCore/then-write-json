@@ -1,6 +1,6 @@
 {
   "name": "then-write-json",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Write contents to JSON file using JSON.stringify and promises. Creating intermediate directories if they don't exist.",
   "repository": "tunnckoCore/then-write-json",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
