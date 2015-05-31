@@ -18,5 +18,17 @@
     "assertit": "^0.1.0",
     "bluebird": "^2.9.27"
   },
-  "keywords": []
+  "keywords": [
+    "create",
+    "directory",
+    "disk",
+    "file",
+    "mkdirp",
+    "modern",
+    "promise",
+    "promises",
+    "utils",
+    "write",
+    "write-file"
+  ]
 }
