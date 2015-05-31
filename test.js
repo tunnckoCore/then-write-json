@@ -22,16 +22,32 @@ test('then-write-json:', function () {
     test.throws(fixture, /then-write-json expect `fp` be string/)
     done()
   })
-  test('should write stringified `content` to file', function (done) {
-    var promise = thenWriteJson('./foobar.json', {foo: 'bar'})
+  test('should write `content` to file', function (done) {
+    var promise = thenWriteJson('./foobar.txt', {foo: 'bar'})
 
     promise.then(function (res) {
       test.equal(res, true)
       done()
     })
   })
-  test('should write file and create directory', function (done) {
-    var promise = thenWriteJson('./fixture/foobar.json', {foo: 'bar'})
+  test('should create directory and write file to it', function (done) {
+    var promise = thenWriteJson('./fixture/foobar.txt', {foo: 'bar'})
+
+    promise.then(function (res) {
+      test.equal(res, true)
+      done()
+    })
+  })
+  test('should create nested directories and write file the final', function (done) {
+    var promise = thenWriteJson('./baz/bar/qux/foobar.txt', {foo: 'bar'})
+
+    promise.then(function (res) {
+      test.equal(res, true)
+      done()
+    })
+  })
+  test('should write file to already existing directory', function (done) {
+    var promise = thenWriteJson('./fixture/barbaz.txt', {foo: 'bar'})
 
     promise.then(function (res) {
       test.equal(res, true)
@@ -39,22 +55,22 @@ test('then-write-json:', function () {
     })
   })
   test('should catch error if file exists', function (done) {
-    var promise = thenWriteJson('./foobar.json', {foo: 'bar'})
+    var promise = thenWriteJson('./foobar.txt', {foo: 'bar'})
 
     promise.catch(function (err) {
       test.ifError(!err)
       test.equal(err.code, 'EEXIST')
-      test.equal(err.message, 'EEXIST, already exists "./foobar.json"')
+      test.equal(err.message, 'EEXIST, already exists "./foobar.txt"')
       done()
     })
   })
   test('should catch error if directory exists', function (done) {
-    var promise = thenWriteJson('./node_modules', {foo: 'bar'})
+    var promise = thenWriteJson('./baz', {foo: 'bar'})
 
     promise.catch(function (err) {
       test.ifError(!err)
       test.equal(err.code, 'EEXIST')
-      test.equal(err.message, 'EEXIST, already exists "./node_modules"')
+      test.equal(err.message, 'EEXIST, already exists "./baz"')
       done()
     })
   })
