@@ -10,8 +10,8 @@
     "test": "standard && node test.js"
   },
   "dependencies": {
-    "then-stringify-json": "^1.0.1",
-    "then-write-file": "^1.0.0"
+    "then-stringify-json": "~1.0.1",
+    "then-write-file": "~1.0.0"
   },
   "devDependencies": {
     "assertit": "^0.1.0",
