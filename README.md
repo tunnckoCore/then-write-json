@@ -17,7 +17,22 @@ npm test
 
 ```js
 var thenWriteJson = require('then-write-json')
+
+thenWriteJson('./foobar.json', {foo: 'bar'})
+.then(function (res) {
+  console.log(res)
+  //=> true
+})
+.catch(console.error)
 ```
+
+
+## Related
+- [then-parse-json](https://github.com/tunnckoCore/then-parse-json): Gracefully parse JSON using promises - promisified JSON.parse
+- [then-stringify-json](https://github.com/tunnckoCore/then-stringify-json): Gracefully stringify JSON using promises - promisified JSON.stringify
+- [then-read-json](https://github.com/tunnckoCore/then-read-json): Read JSON file using promises
+- [then-write-file](https://github.com/tunnckoCore/then-write-file): Write file to disk, using promises and creating intermediate directories if they don't exist.
+- [try-read-json](https://github.com/tunnckoCore/try-read-json): Fast, meaningful and correct try/catch flow for reading JSON with JSON.parse - support optional callback
 
 
 ## Contributing
